@@ -39,28 +39,36 @@ int main() {
 		int choice; 
 		cin>>choice;
 		if(choice==1) {	
+		system("cls");
 	while(true) {
 		cout<<"You have "<<upgrade.cookies<<" cookies\n";
 		cout<<"Press K to get more cookies!\n";
 		cout<<"Press Q to go back to main menu\n";
 		char Click;
 		cin>>Click;
-		if(Click=='k' || Click=='K')
+		if(Click=='k' || Click=='K') {
 		upgrade.cookiesPerClick();
-		else if(Click=='Q' || Click=='q')
-		break;	
+		system("cls");
+		}
+		else if(Click=='Q' || Click=='q') {
+		system("cls");
+		break;
+		}	
 	}
 }
 
 		else if(choice==2) {
+		system("cls");
 		cout<<"Welcome to the cookie shop where you can buy upgrades for your cookie factory!!\n";
 		cout<<"Press 3 to go back\n";
 		cout<<"1.clickPower (cost: " <<upgrade.cost1<<" cookies)\n";
 		
 		int buy;
 		cin>>buy;
-		if(buy == 1)
+		if(buy == 1) {
+		system("cls");
 		upgrade.buyUpgrade();
+			}
 		}
 
 		else if(choice==3) {
