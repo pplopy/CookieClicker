@@ -1,52 +1,9 @@
 #include <iostream>
 #include <windows.h>
 #include <thread>
-using namespace std;
-
-class Upgrade {
-public:
-	int cost1 = 50;
-	int cost2 = 500;
-	int levelUpgrade1 = 1;
-	int levelUpgrade2 = 0;
-	int cookies = 0;
-
-	void cookiesPerClick() {			
-		cookies += levelUpgrade1;
-	}
-
-	void buyAutoClickerUpgrade() {
-		if(cookies >= cost2) {
-			levelUpgrade2++;
-			cookies -= cost2;
-			cost2 *= 2;
-			hasAutoClicker = true;
-			}
-		}
-	
-	bool hasAutoClicker = false;
-	
-	void autoClicker() {
-		if(hasAutoClicker == true) {
-			cookies += levelUpgrade2;
-			cout << "[Auto] Cookies: " << cookies << "\n";
-			Sleep(1000);
-		}
-	}
-							
-	void buyClickPowerUpgrade() {
-		if(cookies >= cost1) {
-			levelUpgrade1++;
-			cookies -= cost1;
-			cost1 *= 2;
-			cout<<"You purchased the first upgrade!\n";
-		}
-		else {
-			cout<<"You don't have enough cookies\n";
-		}
-	}
-};	
-
+#include "Upgrade.hpp"
+#include "Upgrade.cpp"
+using namespace std;	
 
 int main() {
 	Upgrade upgrade;
@@ -104,7 +61,7 @@ int main() {
 		}
 		}
 
-		else if(choice == 3 || choice == 3) {
+		else if(choice == 3) {
 			cout<<"See you next time!";
 			Sleep(3000);
 			break;
